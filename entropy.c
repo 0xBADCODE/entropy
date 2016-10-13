@@ -3,8 +3,6 @@
  *
  * gcc entropy.c -o entropy -ggdb -Wall -lm
  *
- * TODO
- * FIX PI ESTIMATE
  * Copyright (c) 2016 Thomas Hand <th6045@gmail.com>
  *
  * Permission to use, copy, modify, and distribute this software for any
@@ -51,8 +49,8 @@ double log2(double x)
 /* Monte Carlo estimate for pi */
 void monte_carlo(double x, double y)
 {
-	x /= 256.0;
-	y /= 256.0;
+	x /= 255.0;
+	y /= 255.0;
 
 	/* Does (x, y) satisfy circle equation? */
 	if((pow(x, 2.0) + pow(y, 2.0)) <= 1) m++;
