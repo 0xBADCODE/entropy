@@ -55,8 +55,8 @@ void monte_carlo(double x, double y)
 	/* Does (x, y) satisfy circle equation? */
 	if((pow(x, 2.0) + pow(y, 2.0)) <= 1) m++;
 
-	//printf("[ENTROPY]: x = %f, y = %f, m = %d, pi = %f\n", x, y, m, 4 * m / ((double)total_bytes/2)); //DEBUG
-	//if(4.0 * m / ((double)total_bytes/2) < 3.14159265) //exit(-1); //DEBUG
+	//printf("[ENTROPY]: x = %f, y = %f, m = %d, pi = %f\n", x, y, m, 4.0 * m / ((double)total_bytes/2.0)); //DEBUG
+	//if(4.0 * m / ((double)total_bytes/2.0) < 3.14159265) //exit(-1); //DEBUG
 	return;
 }
 
@@ -142,8 +142,8 @@ int main(int argc, char *argv[])
 
 	printf("Arithmetic Mean Value = %0.3f (127.5 = random)\n", amv / total_bytes);
 
-	pi = 4 * ((double)m / (total_bytes / 2)); // m/n = pi/4
-	printf("Monte Carlo estimate of Pi = %0.8f (%.2f%% error) (TODO: FIX ERROR)\n", pi, 100 * (fabs((M_PI - pi) / M_PI)));
+	pi = 4.0 * ((double)m / (total_bytes / 2.0)); // m/n = pi/4
+	printf("Monte Carlo estimate of Pi = %0.8f (%.2f%% error) (3.14159256 = random)\n", pi, 100 * (fabs((M_PI - pi) / M_PI)));
 
 	printf("Chi-Squared distribution = %.3f (lower is more random)\n", chi_sq);
 
